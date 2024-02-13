@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Importar -->
+    <link rel='stylesheet' type='text/css' media='screen' href='css/login.css'>
+    <script src='main.js'></script>
+
+    <!-- Scripts -->
+    <script src="js/jquery.js"></script>
+
+</head>
+<body>
+    <div class="login-maincontenedor">
+        <header>
+        <h1>Inicio de sesion</h1>
+        <h2>Complete el formulario para continuar</h2>
+        </header>
+
+        <form id="formulario" >
+            <span>usuario</span>
+            <input type="text" class="login-maincontenedor-input" placeholder="Ingrese el usuario" name="loginUser" required>
+        
+            <span>Contraseña</span>
+            <input type="text" class="login-maincontenedor-input" placeholder="Ingrese la contraseña" name="loginPass" required>
+        </form>
+        <footer>
+            <button class="login-maincontenedor-input" id="botonEnviarLogin" style="text-indent: 0px;">Ingresar</button>
+
+            <p id="resultado" style="color: #f00;" ></p>
+            <p class="res">¿No tienes cuenta? create una cuenta <a href="#">aqui.</a></p>
+            
+        </footer>
+    </div>
+    <script>
+        $("#botonEnviarLogin").click(function(){
+		$.ajax({
+			url: "php/login.php",
+			type: "post",
+			data: $("#formulario").serialize(),
+			success: function(resultado){
+                if (resultado == 0){
+                    $("#resultado").html("Los campos no pueden estar vacios");
+                } else if(resultado == 1){
+                    $("#resultado").html('Usuario o contraseña incorrecta');
+                }
+                
+			}
+		});
+	});
+    </script>
+</body>
+</html>
