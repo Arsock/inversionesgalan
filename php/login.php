@@ -12,10 +12,11 @@ if($usuario == "" OR $clave == ""){
     echo 0;
 }elseif($resul = $resultado -> fetch_array()){
 	if($usuario == $resul[1] AND $clave == $resul[2]){
-        // Header("Location: main.php");
         echo 2;
+
 	} 
 
 }else{
     echo 1;
 }
+?>
