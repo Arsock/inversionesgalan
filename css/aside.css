@@ -1,0 +1,21 @@
+.main-aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: red;
+    width: 20%;
+}
+
+.main--aside-div{
+    background: chartreuse;
+
+}
+
+.main--aside-div:nth-child(1){
+    display: flex;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+
+}
