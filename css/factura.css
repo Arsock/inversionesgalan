@@ -9,9 +9,11 @@ body{
     display: flex;
     height: 100vh;
     background: rebeccapurple;
+    
 }
 
 .factura-main{
-    background: green;
+    background: rgb(255, 255, 255);
     width: 80%;
+    padding: 30px;
 }

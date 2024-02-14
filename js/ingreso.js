@@ -10,7 +10,7 @@ $("#botonEnviarLogin").click(function(){
             } else if(resultado == 1){
                 $("#resultado").html('Usuario o contraseña incorrecta');
             }else{
-                window.open("php/main.php","_self");
+                window.open("php/factura.html","_self");
             } 
             
         }
