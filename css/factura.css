@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    background: rebeccapurple;
+    
+}
+
+.factura-main{
+    background: rgb(255, 255, 255);
+    width: 80%;
+    padding: 30px;
+}
