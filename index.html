@@ -20,24 +20,24 @@
 
 </head>
 <body>
-    <div class="login-maincontenedor">
+    <div class="login-maincontenedor ">
         <header>
         <h1>Inicio de sesion</h1>
         <h2>Complete el formulario para continuar</h2>
         </header>
 
-        <form id="formulario" >
+        <form id="formulario" autocomplete="off">
             <span>usuario</span>
             <input type="text" class="login-maincontenedor-input" placeholder="Ingrese el usuario" name="loginUser" required>
         
             <span>Contraseña</span>
-            <input type="text" class="login-maincontenedor-input" placeholder="Ingrese la contraseña" name="loginPass" required>
+            <input type="password" class="login-maincontenedor-input" placeholder="Ingrese la contraseña" name="loginPass" required>
         </form>
         <footer>
             <button class="login-maincontenedor-input" id="botonEnviarLogin" style="text-indent: 0px;">Ingresar</button>
 
             <p id="resultado" style="color: #f00;" ></p>
-            <p class="res">¿No tienes cuenta? create una cuenta <a href="#">aqui.</a></p>
+            <!-- <p class="res">¿No tienes cuenta? create una cuenta <a href="#">aqui.</a></p> -->
             
         </footer>
     </div>

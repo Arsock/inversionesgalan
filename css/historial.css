@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    background: rebeccapurple;
+    
+}
+
+.historial-main{
+    background: #F5F5F5;
+    width: 80%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.historial--main-header{
+    width: 100%;
+    height: 15%;
+    background: #fff;
+    display: flex;
+    justify-content: start;
+    padding-left: 30px;
+    align-items: center;
+}
+
+
+.historial--main-main{
+    width: 100%;
+    background: #fff;
+    height: 70%;
+    overflow-x: scroll;
+    outline: 1px solid #C1C1C1;
+}
+
+table{
+    width: 100%;
+    background: #fff;
+    
+}
+
+tr{
+    height: 50px;
+}
+
+.tr--header{
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+
+
+.historial--main-footer{
+    width: 100%;
+    background: #fff;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.historial--main-footer button{
+    width: 20%;
+    height: 80%;
+    background: #42BFDD;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    filter: drop-shadow(1px 5px 5px #3333337c);
+    cursor: pointer;
+}
+
+
+.historial--main-header button{
+    width: 20%;
+    height: 50%;
+    background: #42BFDD;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    filter: drop-shadow(1px 5px 5px #3333337c);
+    cursor: pointer;
+}
+
+.historial--main-header .contenedor-buscador{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.historial--main-header .contenedor-buscador button{
+    border-radius: 0 10px 10px 0;
+}
+
+.historial--main-header div input{
+    width: 20rem;
+    height: 50%;
+    border-radius: 10px 0 0 10px;
+    filter: drop-shadow(1px 5px 5px #3333337c);
+    border: none;
+    text-indent: 20px;
+    font-size: 14px;
+}
+.historial--main-main table th{
+    padding: 20px;
+}
+
+.historial--main-main table .baja{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.historial--main-main table .baja span:nth-child(2){
+    font-weight: lighter;
+}
+
+thead{
+    background: rebeccapurple;
+}

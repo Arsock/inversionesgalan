@@ -9,14 +9,14 @@ $resultado = mysqli_query($conexion, $sql);
 
 
 if($usuario == "" OR $clave == ""){
-    echo 0;
+    echo "vacio";
 }elseif($resul = $resultado -> fetch_array()){
 	if($usuario == $resul[1] AND $clave == $resul[2]){
-        echo 2;
+        echo $resul[0];
 
 	} 
 
 }else{
-    echo 1;
+    echo "error";
 }
 ?>

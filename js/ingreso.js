@@ -5,12 +5,12 @@ $("#botonEnviarLogin").click(function(){
         type: "post",
         data: $("#formulario").serialize(),
         success: function(resultado){
-            if (resultado == 0){
+            if (resultado == "vacio"){
                 $("#resultado").html("Los campos no pueden estar vacios");
-            } else if(resultado == 1){
+            } else if(resultado == "error"){
                 $("#resultado").html('Usuario o contraseña incorrecta');
             }else{
-                window.open("php/factura.html","_self");
+                window.open(`php/factura.php?id=${resultado}`,"_self");
             } 
             
         }

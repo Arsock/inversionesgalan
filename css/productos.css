@@ -12,7 +12,7 @@ body{
     
 }
 
-.factura-main{
+.producto-main{
     background: #F5F5F5;
     width: 80%;
     padding: 30px;
@@ -21,30 +21,17 @@ body{
     justify-content: space-between;
 }
 
-.factura--main-header{
+.producto--main-header{
     width: 100%;
-    height: 25%;
+    height: 15%;
     background: #fff;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.factura--main-header div{
-    background: #42BFDD;
-    width: 25%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    border-radius: 5px;
-    color: #fff;
-    filter: drop-shadow(1px 5px 5px #3333337c);
-}
 
-.factura--main-main{
+.producto--main-main{
     width: 100%;
     background: #fff;
     height: 60%;
@@ -68,7 +55,7 @@ tr{
 
 
 
-.factura--main-footer{
+.producto--main-footer{
     width: 100%;
     background: #fff;
     height: 10%;
@@ -78,7 +65,7 @@ tr{
 }
 
 
-.factura--main-footer button{
+.producto--main-footer button{
     width: 20%;
     height: 80%;
     background: #42BFDD;
@@ -90,9 +77,40 @@ tr{
 }
 
 
+.producto--main-header button{
+    width: 20%;
+    height: 50%;
+    background: #42BFDD;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    filter: drop-shadow(1px 5px 5px #3333337c);
+    cursor: pointer;
+}
+
+.producto--main-header .contenedor-buscador{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.producto--main-header .contenedor-buscador button{
+    border-radius: 0 10px 10px 0;
+}
+
+.producto--main-header div input{
+    width: 20rem;
+    height: 50%;
+    border-radius: 10px 0 0 10px;
+    filter: drop-shadow(1px 5px 5px #3333337c);
+    border: none;
+    text-indent: 20px;
+    font-size: 14px;
+}
+
 /*  */
 
-.agg-productos-factura{
+.agg-productos{
     z-index: 200;
     position: absolute;
     
@@ -106,7 +124,7 @@ tr{
     flex-direction: column;
 }
 
-.agg-productos-factura form{
+.agg-productos form{
     background: #fff;
     width: 30%;
     height: 80%;
@@ -118,7 +136,7 @@ tr{
 }
 
 
-.agg-productos-factura form input,select{
+.agg-productos form input,select{
     height: 40px;
     width: 80%;
     border-radius: 5px;
@@ -127,6 +145,13 @@ tr{
     text-indent: 15px;
 }
 
+
+.botonaggproducto{
+    border: none !important;
+    background: #ccc;
+    text-indent: 0 !important;
+    cursor: pointer;
+}
 
 .botonaggproducto{
     border: none !important;
@@ -149,6 +174,60 @@ tr{
     color: #fff;
     background: #42BFDD;
     cursor: pointer;
+}
+
+.popup{
+    z-index: 200;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #0000004f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup form{
+    width: 30%;
+    height: 80%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.x{
+    width: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    background: #fff;
+    color: #42BFDD;
+    border: none;
+    cursor: pointer;
+}
+.input-register{
+    height: 35px;
+    border: none;
+    outline: none;
+    background: #ebebeb;
+    border-radius: 5px;
+    text-indent: 15px;
+    
+    
+}
+
+.boton-register{
+    text-indent: 0;
+    cursor: pointer;
+    transition: background .3s, color .3s;
+}
+
+
+.eliminar:hover{
+    background: rgb(191, 4, 4);
+    color: #fff;
 }
 
 .hidden{
