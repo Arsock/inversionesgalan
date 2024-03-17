@@ -20,7 +20,7 @@ $sql2 = "INSERT INTO `historial`(`idusuario`, `movimiento`, `submovimiento`, `fe
 $resultado2 = mysqli_query($conexion, $sql2);
 
 if($resultado){
-    Header("Location: productos.php?id=$usuario");
+    Header("Location: productos.php?id=$usuario&search=0");
 }
 
 ?>

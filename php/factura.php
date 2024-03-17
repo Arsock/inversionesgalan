@@ -169,7 +169,7 @@ $resultado6= mysqli_query($conexion, $sql6);
             window.location.href = "./factura.php?id=<?=$usuario?>"
         })
         botones[1].addEventListener("click",()=>{
-            window.location.href = "productos.php?id=<?=$usuario?>"
+            window.location.href = "productos.php?id=<?=$usuario?>&search=0"
         })
         botonhistoria.addEventListener("click",()=>{
             window.location.href = "./historial.php?id=<?=$usuario?>"

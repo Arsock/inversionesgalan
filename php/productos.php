@@ -1,6 +1,9 @@
 <?php
 include("conexion.php");
 $usuario = $_GET['id'];
+$busqueda = $_GET['search'];
+
+
 
 if($usuario == ""){
     Header("Location: ../index.html");
@@ -11,9 +14,19 @@ $sql = "SELECT * FROM categoria";
 $resultado = mysqli_query($conexion, $sql);
 
 
-$sql2 = "SELECT * FROM productos";
+if($busqueda == 0){
+    $sql2 = "SELECT * FROM productos";
 
-$resultado2 = mysqli_query($conexion, $sql2);
+    $resultado2 = mysqli_query($conexion, $sql2);
+} else{
+    $sql2 = "SELECT * FROM productos WHERE serial LIKE $busqueda";
+
+    $resultado2 = mysqli_query($conexion, $sql2);
+}
+
+
+
+
 
 $sql3 = "SELECT * FROM productos";
 
@@ -161,7 +174,7 @@ $resultado9 = mysqli_query($conexion, $sql9);
         <h1>Producto</h1>
         <header class="producto--main-header">
             <div class="contenedor-buscador">
-                <input type="text" class="buscador" placeholder="Serial del producto"><button>Buscar</button>
+                <input type="text" class="buscador" placeholder="Serial del producto"><button id="buscador">Buscar</button>
             </div>
             <button class="boton-productos">+ Productos</button>
         </header>
@@ -229,6 +242,20 @@ $resultado9 = mysqli_query($conexion, $sql9);
         const botonesalir = document.querySelector(".botonesalir");
         const botonhistoria = document.querySelector(".historial");
         const segido = document.querySelector(".segido");
+
+        const botonbuscar = document.getElementById("buscador");
+
+        botonbuscar.addEventListener("click",()=>{
+            var inputbuscador = document.querySelector(".buscador").value
+            if (inputbuscador == ""){
+                window.location.href = `./productos.php?id=<?=$usuario?>&search=0`
+            }else{
+
+                window.location.href = `./productos.php?id=<?=$usuario?>&search=${inputbuscador}`
+            }
+ 
+        })
+
         
         segido.addEventListener("click",()=>{
             no3.classList.toggle("hidden")
@@ -239,7 +266,7 @@ $resultado9 = mysqli_query($conexion, $sql9);
             window.location.href = "./factura.php?id=<?=$usuario?>"
         })
         botones[1].addEventListener("click",()=>{
-            window.location.href = "productos.php?id=<?=$usuario?>"
+            window.location.href = "productos.php?id=<?=$usuario?>&search=0"
         })
         botonhistoria.addEventListener("click",()=>{
             window.location.href = "./historial.php?id=<?=$usuario?>"
@@ -275,10 +302,11 @@ $resultado9 = mysqli_query($conexion, $sql9);
                 type: "post",
                 data: $("#productoeliminarselec").serialize(),
                 success: function(resultado){
-                    window.location.href = "./productos.php?id=<?=$usuario?>"
+                    window.location.href = "./productos.php?id=<?=$usuario?>&search=0"
                 }
             });
         });
+        
         
         const xnotification = document.querySelector(".xnotification");
         const notificacion = document.querySelector(".notificacion");

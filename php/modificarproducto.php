@@ -10,7 +10,7 @@ $sql = "UPDATE `productos` SET `nombreproducto`='$nombre',`categ`='$categ',`prec
 
 $resultado = mysqli_query($conexion, $sql);
 if($resultado){
-        Header("Location: productos.php?id=$usuario");
+        Header("Location: productos.php?id=$usuario&search=0");
     }
 
 ?>

@@ -20,7 +20,7 @@ if($resul = $resultado -> fetch_array()){
     $resultado2 = mysqli_query($conexion, $sql2);
 
 
-    Header("Location: productos.php?id=$usuario");
+    Header("Location: productos.php?id=$usuario&search=0");
 }
 
 ?>
